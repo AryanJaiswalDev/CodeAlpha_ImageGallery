@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery | CodeAlpha</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <h1>Image <span>Gallery</span></h1>
+    <p class="subtitle">Browse by category, click any photo to open it in the lightbox.</p>
+  </header>
+
+  <!-- Upload section -->
+  <section class="upload" id="upload">
+    <div class="upload-box" id="drop-zone" tabindex="0" role="button" aria-label="Upload images">
+      <span class="upload-icon">+</span>
+      <strong>Add your images</strong>
+      <small>Click here or drag &amp; drop photos from your device</small>
+      <input type="file" id="file-input" accept="image/*" multiple hidden>
+    </div>
+    <label class="upload-cat">
+      Category for new photos
+      <input type="text" id="upload-category" value="My Uploads" maxlength="20">
+    </label>
+    <p class="upload-note">Uploaded photos are saved in this browser only.</p>
+  </section>
+
+  <!-- Category filters -->
+  <nav class="filters" id="filters" aria-label="Filter images by category"></nav>
+
+  <!-- Gallery grid -->
+  <main class="gallery" id="gallery"></main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Image viewer">
+    <button class="lb-btn lb-close" id="lb-close" aria-label="Close">&times;</button>
+    <button class="lb-btn lb-prev" id="lb-prev" aria-label="Previous image">&#10094;</button>
+
+    <figure class="lb-figure">
+      <img id="lb-img" src="" alt="">
+      <figcaption>
+        <span id="lb-title"></span>
+        <span id="lb-count"></span>
+      </figcaption>
+      <div class="lb-effects" id="lb-effects" aria-label="Image filters"></div>
+    </figure>
+
+    <button class="lb-btn lb-next" id="lb-next" aria-label="Next image">&#10095;</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
